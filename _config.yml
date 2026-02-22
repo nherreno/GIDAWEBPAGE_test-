@@ -1,39 +1,62 @@
-# Información del sitio
+# -----------------------------------------------------------------------------
+# GIDA UNAL - CONFIGURACIÓN DEL PORTAL AEROESPACIAL
+# -----------------------------------------------------------------------------
+
+# Información del Sitio
 title: "GIDA UNAL"
 name: "Grupo de Investigación y Desarrollo Aeroespacial"
-description: "Investigación, desarrollo y divulgación de ciencias aeroespaciales en la Universidad Nacional de Colombia."
+description: "Plataforma oficial de investigación y desarrollo aeroespacial - Universidad Nacional de Colombia."
 url: "https://nherreno.github.io"
-baseurl: "/GIDAWEBPAGE_test-"
+baseurl: "/GIDAWEBPAGE_test-" # IMPORTANTE: Debe coincidir con el nombre de tu repo
 
-# Configuración del Sidebar (Quitar el modo "persona")
+# Branding y Estética
+# Opciones recomendadas: 'air' (blanco), 'contrast' (oscuro), 'mint' (verde)
+minimal_mistakes_skin: "air" 
+search: true
+
+# Configuración del Autor (Sidebar Institucional)
 author:
   name: "GIDA - Sede Bogotá"
+  avatar: "/assets/images/logo-gida.png" # Asegúrate de subir un logo a esta ruta
+  bio: "Investigación en Cohetería Experimental y Sistemas Satelitales."
   location: "Bogotá, Colombia"
-  bio: "Desarrollo tecnológico en cohetería y sistemas satelitales."
   links:
-    - label: "Web UNAL"
+    - label: "Web Universidad Nacional"
       icon: "fas fa-fw fa-university"
       url: "https://unal.edu.co"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/nherreno"
 
-# Desactivar el sidebar de autor por defecto en todas las páginas 
-# (Para que el sitio se vea más ancho y profesional)
+# Plugins de Jekyll
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+# Configuración de Markdown (Soporte para LaTeX)
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter_opts:
+    block_class: "highlight"
+
+# Estructura de Páginas por Defecto
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: single
-      author_profile: true # Esto lo dejamos solo para noticias/blogs
-      read_time: true
-      comments: false
+      author_profile: true
       share: true
-      related: true
   - scope:
       path: ""
       type: pages
     values:
       layout: single
-      author_profile: false # FALSO para páginas institucionales (Home, Proyectos)
+      author_profile: false # Limpia el sidebar en páginas estáticas para un look más ancho
