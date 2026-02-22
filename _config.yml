@@ -7,17 +7,16 @@ title: "GIDA UNAL"
 name: "Grupo de Investigación y Desarrollo Aeroespacial"
 description: "Plataforma oficial de investigación y desarrollo aeroespacial - Universidad Nacional de Colombia."
 url: "https://nherreno.github.io"
-baseurl: "/GIDAWEBPAGE_test-" # IMPORTANTE: Debe coincidir con el nombre de tu repo
+baseurl: "/GIDAWEBPAGE_test-" # IMPORTANTE: Slash inicial y nombre exacto del repo
 
-# Branding y Estética
-# Opciones recomendadas: 'air' (blanco), 'contrast' (oscuro), 'mint' (verde)
+# Selección de Piel (Skin)
+# Opciones: 'air' (blanco), 'contrast' (oscuro), 'mint' (verde), 'dirt' (café)
 minimal_mistakes_skin: "air" 
-search: true
 
 # Configuración del Autor (Sidebar Institucional)
 author:
   name: "GIDA - Sede Bogotá"
-  avatar: "/assets/images/logo-gida.png" # Asegúrate de subir un logo a esta ruta
+  avatar: "/assets/images/logo-gida.png" # Ruta para el futuro logo
   bio: "Investigación en Cohetería Experimental y Sistemas Satelitales."
   location: "Bogotá, Colombia"
   links:
@@ -28,16 +27,16 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/nherreno"
 
-# Plugins de Jekyll
+# Plugins de Jekyll (Incluye la corrección para el error de Build)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
-  - jekyll-include-cache
+  - jekyll-include-cache # REQUERIDO para evitar error en GitHub Actions
 
-# Configuración de Markdown (Soporte para LaTeX)
+# Configuración de Markdown y Matemáticas (LaTeX)
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -45,7 +44,7 @@ kramdown:
   syntax_highlighter_opts:
     block_class: "highlight"
 
-# Estructura de Páginas por Defecto
+# Configuración de Valores por Defecto
 defaults:
   - scope:
       path: ""
@@ -53,10 +52,30 @@ defaults:
     values:
       layout: single
       author_profile: true
+      read_time: true
       share: true
+      related: true
   - scope:
       path: ""
       type: pages
     values:
       layout: single
-      author_profile: false # Limpia el sidebar en páginas estáticas para un look más ancho
+      author_profile: false # Limpia el sidebar en páginas estáticas para look institucional
+
+# Configuración de Archivos y Lectura
+include: ["_pages"]
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
