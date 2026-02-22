@@ -1,27 +1,23 @@
-# Configuración GIDA UNAL
+# Configuración Base de Rescate
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "air"
+minimal_mistakes_skin: "default"
 
-# Información
-title: "GIDA UNAL"
-name: "Grupo de Investigación y Desarrollo Aeroespacial"
+# Información mínima
+title: "GIDA Test"
 url: "https://nherreno.github.io"
 baseurl: "/GIDAWEBPAGE_test-"
 
-# Plugins - Esta lista debe ser exacta
+# Plugins requeridos
 plugins:
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
 
-# Configuración por defecto
-defaults:
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: false
+# Ignorar archivos innecesarios
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .jekyll-cache
+  - vendor
