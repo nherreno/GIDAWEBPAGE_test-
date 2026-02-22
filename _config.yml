@@ -2,41 +2,41 @@
 # GIDA UNAL - CONFIGURACIÓN DEL PORTAL AEROESPACIAL
 # -----------------------------------------------------------------------------
 
+# Configuración del Motor (Indispensable para GitHub Pages)
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "air" # Opciones: 'air', 'contrast', 'mint', 'sunrise'
+
 # Información del Sitio
 title: "GIDA UNAL"
 name: "Grupo de Investigación y Desarrollo Aeroespacial"
-description: "Plataforma oficial de investigación y desarrollo aeroespacial - Universidad Nacional de Colombia."
+description: "Plataforma de investigación y desarrollo aeroespacial - Universidad Nacional de Colombia."
 url: "https://nherreno.github.io"
-baseurl: "/GIDAWEBPAGE_test-" # Slash inicial y nombre exacto del repo
+baseurl: "/GIDAWEBPAGE_test-" # Mantener el slash y nombre exacto del repo
 
-# Selección de Estética (Skin)
-# Opciones recomendadas: 'air' (blanco), 'contrast' (oscuro), 'mint' (verde UNAL)
-minimal_mistakes_skin: "air" 
-
-# Configuración del Autor (Barra lateral institucional)
+# Configuración del Autor (Sidebar)
 author:
-  name: "GIDA - Sede Bogotá"
-  avatar: "/assets/images/logo-gida.png" 
-  bio: "Investigación en Cohetería Experimental y Sistemas Satelitales."
+  name: "GIDA UNAL"
+  avatar: "/assets/images/logo-gida.png"
+  bio: "Investigación en Cohetería y Sistemas Satelitales."
   location: "Bogotá, Colombia"
   links:
-    - label: "Web Universidad Nacional"
+    - label: "Web UNAL"
       icon: "fas fa-fw fa-university"
       url: "https://unal.edu.co"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/nherreno"
 
-# Plugins de Jekyll (FUNDAMENTAL para que el Build pase a verde)
+# Plugins (Configuración crítica para evitar errores de Build)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
-  - jekyll-include-cache # Esta es la pieza que falta según tu error
+  - jekyll-include-cache
 
-# Configuración de Markdown y Soporte LaTeX
+# Configuración de Markdown y Matemáticas
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -44,7 +44,7 @@ kramdown:
   syntax_highlighter_opts:
     block_class: "highlight"
 
-# Configuración de Comportamiento por Defecto
+# Comportamiento por Defecto
 defaults:
   - scope:
       path: ""
@@ -58,4 +58,16 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: false # Sidebar limpio para páginas de proyectoss
+      author_profile: false
+
+# Archivos a ignorar en la compilación
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .jekyll-cache
+      
