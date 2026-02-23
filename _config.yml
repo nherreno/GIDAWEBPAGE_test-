@@ -10,21 +10,29 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+
+#---------------------------
+
+
+
+# Theme Settings (esta parte la dejamos igual, al momento de subirlo al repo de GIDA )
+# theme                   : "minimal-mistakes-jekyll" # Déjalo comentado
+remote_theme            : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin   : "air" # "air" es más profesional que "default"
 
 # Site Settings
-locale                   : "en-US"
-rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Site Title"
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+locale                  : "es-CO" # Cambiado a español de Colombia
+title                   : "GIDA UNAL"
+name                    : "GIDA"
+description             : "Portal de Investigación Aeroespacial"
+url                     : "https://nherreno.github.io"
+baseurl                 : "/GIDAWEBPAGE_test-" # ¡VITAL para los estilos!
+repository              : "nherreno/GIDAWEBPAGE_test-"
+#esta parte toca que le digan a la IA que es cada cosas , quiza tenga que hacer algunos cambios para que se ejecute bien 
+
+
+
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -111,12 +119,12 @@ analytics:
     anonymize_ip         : # true, false (default)
 
 
-# Site Author
+# toca despues cambiar el logo , y adicional , los correos y eso 
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  name             : "GIDA" # Cambia "Your Name" por "GIDA"
+  avatar           : # Aquí puedes poner "/assets/images/logo_gida.jpg" después
+  bio              : "Grupo de Investigación y Desarrollo Aeroespacial - UNAL"
+  location         : "Bogotá, Colombia"
   email            :
   links:
     - label: "Email"
