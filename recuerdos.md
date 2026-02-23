@@ -49,7 +49,7 @@ header:
   }
 </style>
 
-Esta sección rinde homenaje a nuestra trayectoria. Las imágenes se entrelazan y fluyen con suavidad, dando nueva vida a los recuerdos que nos acompañan desde hace más de trece años. Son la expresión de sueños compartidos, proyectos que nos enseñaron tanto en los aciertos como en los tropiezos, y amistades que nacieron y crecieron en el grupo. Reflejan también los intereses comunes que nos unieron, sin importar los caminos que cada uno eligiera después,
+Esta sección rinde homenaje a nuestra trayectoria. Las imágenes se entrelazan y fluyen con suavidad, dando nueva vida a los recuerdos que nos acompañan desde hace más de trece años. Son la expresión de sueños compartidos, proyectos que nos enseñaron tanto en los aciertos como en los tropiezos, y amistades que nacieron y crecieron en el grupo. Reflejan también los intereses comunes que nos unieron, sin importar los caminos que cada uno eligiera después.
 
 <div class="collage-container" id="collage">
   {% for file in site.static_files %}
