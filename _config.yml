@@ -19,7 +19,7 @@
 # Theme Settings (esta parte la dejamos igual, al momento de subirlo al repo de GIDA )
 # theme                   : "minimal-mistakes-jekyll" # Déjalo comentado
 remote_theme            : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin   : "dark" # "air" es más profesional que "default"
+minimal_mistakes_skin   : "plum" # "air" es más profesional que "default"
 
 # Site Settings
 locale                  : "es-CO" # Cambiado a español de Colombia
