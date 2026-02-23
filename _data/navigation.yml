@@ -11,3 +11,5 @@ main:
     url: /convocatorias/
   - title: "Semilleros"
     url: /semilleros/
+  - title: "Recuerdos" # Nueva pestaña conmemorativa
+    url: /recuerdos/
