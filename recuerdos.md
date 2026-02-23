@@ -4,11 +4,57 @@ title: "Recuerdos GIDA"
 permalink: /recuerdos/
 author_profile: true
 header:
-  overlay_color: "#5e616c" # Un tono gris elegante para conmemoración
-  caption: "En memoria de quienes han formado parte de nuestra historia."
+  overlay_color: "#2c3e50"
+  caption: "Galeria conmemorativa del GIDA"
 ---
 
-Esta sección está dedicada a honrar y recordar a los miembros y colaboradores que han dejado una huella imborrable en el **Grupo de Investigación y Desarrollo Aeroespacial**.
+<style>
+  /* Contenedor del Collage */
+  .collage-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-auto-rows: 150px;
+    gap: 15px;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+  }
 
-### 🕯️ Espacio Conmemorativo
-*Aquí puedes añadir fotos, nombres o breves reseñas biográficas más adelante.*
+  /* Estilo de cada imagen */
+  .collage-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Animación de flotación aleatoria */
+  @keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(2px, -5px) rotate(1deg); }
+    66% { transform: translate(-2px, 5px) rotate(-1deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
+  /* Variaciones de tiempo para que no se muevan todas al mismo tiempo */
+  .collage-item:nth-child(odd) { animation-duration: 7s; animation-delay: 1s; }
+  .collage-item:nth-child(3n) { animation-duration: 5s; animation-delay: 0.5s; }
+  .collage-item:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 10;
+    cursor: pointer;
+  }
+</style>
+
+Esta sección es un tributo a nuestra historia. Las imágenes se reorganizan y flotan suavemente para dar vida a nuestros recuerdos.
+
+<div class="collage-container">
+  {% for file in site.static_files %}
+    {% if file.path contains 'assets/images/recuerdos' %}
+      <img src="{{ file.path | relative_url }}" class="collage-item" alt="Recuerdo GIDA">
+    {% endif %}
+  {% endfor %}
+</div>
