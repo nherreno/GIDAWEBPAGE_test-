@@ -33,3 +33,7 @@ Actualmente, nos encontramos en la fase de pulir la Página de Inicio (index.md)
 El objetivo es pasar de una lista simple de entradas a un diseño de alto impacto visual con cabeceras y una biografía de autor completa en la barra lateral.
 
 Nota: El paso de creación de archivos individuales para cada pestaña del menú aún no se ha ejecutado, priorizando la estabilidad y estética de la fachada principal.
+
+
+
+se creo una carpeta en assets que guarda las imagenes de recuerdos , y se implemento recuerdos.md la parte de container es la que vamos a modificar para que sea dinamica cada vez que cargemos va a generarse de manera aleatoria el orden de las imagenes 
