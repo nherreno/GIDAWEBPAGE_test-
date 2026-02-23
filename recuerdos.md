@@ -50,11 +50,26 @@ header:
 </style>
 
 Esta sección es un tributo a nuestra historia. Las imágenes se reorganizan y flotan suavemente para dar vida a nuestros recuerdos.
-
-<div class="collage-container">
+<div class="collage-container" id="collage">
   {% for file in site.static_files %}
     {% if file.path contains 'assets/images/recuerdos' %}
       <img src="{{ file.path | relative_url }}" class="collage-item" alt="Recuerdo GIDA">
     {% endif %}
   {% endfor %}
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById('collage');
+    const items = Array.from(container.children);
+    
+    // Algoritmo de barajado (Fisher-Yates)
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    
+    // Reinsertar en el contenedor en el nuevo orden
+    items.forEach(item => container.appendChild(item));
+  });
+</script>
