@@ -2,9 +2,43 @@
 layout: single
 author_profile: true
 title: "Bienvenidos a GIDA"
-excerpt: "Grupo de Investigación y Desarrollo Aeroespacial - Universidad Nacional de Colombia."
 header:
-  overlay_color: "#333" # Esto pondrá un fondo oscuro sólido mientras no hay imagen
+  overlay_color: "transparent"
 ---
+
+<div id="starfield-home" style="position: absolute; top: 0; left: 0; width: 100%; height: 400px; z-index: 0; background: #05070a; overflow: hidden;">
+  <canvas id="canvas-home"></canvas>
+</div>
+
+<style>
+  .page__hero--overlay {
+    background-color: transparent !important;
+    height: 400px;
+    position: relative;
+    z-index: 1;
+  }
+  .page__hero-title, .page__hero-lead {
+    color: white !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  }
+</style>
+
+<script>
+  // Script simplificado para las estrellas de Inicio
+  const cHome = document.getElementById('canvas-home');
+  const ctxHome = cHome.getContext('2d');
+  cHome.width = window.innerWidth; cHome.height = 400;
+  let sHome = Array.from({length: 100}, () => ({x: Math.random()*cHome.width, y: Math.random()*cHome.height, s: Math.random()*2}));
+  function animHome() {
+    ctxHome.clearRect(0,0,cHome.width,cHome.height);
+    ctxHome.fillStyle = 'white';
+    sHome.forEach(s => {
+      ctxHome.beginPath(); ctxHome.arc(s.x, s.y, s.s, 0, Math.PI*2); ctxHome.fill();
+      s.y += 0.2; if(s.y > 400) s.y = 0;
+    });
+    requestAnimationFrame(animHome);
+  }
+  animHome();
+</script>
 
 Aquí puedes escribir una introducción sobre los proyectos actuales del grupo...
