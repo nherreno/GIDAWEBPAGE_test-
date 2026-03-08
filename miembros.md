@@ -1,8 +1,6 @@
 ---
-# ==========================================
-# BLOQUE A: CONFIGURACIÓN DE PÁGINA (JEKYLL)
-# Aquí cambias el título y la ruta de la web.
-# ==========================================
+# BLOQUE 1: CONFIGURACIÓN (Front Matter)
+# No cambiar a menos que quieras otra URL o Título.
 layout: single
 title: "Miembros del GIDA"
 permalink: /miembros/
@@ -16,41 +14,21 @@ header:
 </div>
 
 <style>
-  /* ==========================================
-     BLOQUE C: ESTILOS VISUALES (CSS)
-     ZONA DE CAMBIO: Si quieres tarjetas más anchas,
-     colores distintos o sombras más fuertes.
-     ========================================== */
+  /* BLOQUE 3: ESTILOS CSS (Diseño de Tarjetas) */
+  /* Cámbialo si quieres que las tarjetas se vean distintas */
   .page__hero--overlay { position: relative !important; background-color: #05070a !important; overflow: hidden; }
-
-  /* Títulos de categorías (Pregrado, Postgrado, etc.) */
-  .seccion-titulo {
-    border-bottom: 2px solid #d35400; /* Línea naranja distintiva */
-    margin-top: 50px;
-    margin-bottom: 30px;
-    color: #2c3e50;
-    font-size: 1.8em;
-  }
-
-  /* La rejilla que contiene las tarjetas */
+  .seccion-titulo { border-bottom: 2px solid #d35400; margin: 50px 0 30px; color: #2c3e50; font-size: 1.8em; }
+  
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
     gap: 25px;
-    margin-top: 20px;
   }
 
-  /* La tarjeta individual de cada miembro */
   .member-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease; 
-    text-align: center;
-    overflow: hidden;
-    border: 1px solid #e1e1e1;
+    background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center; overflow: hidden; border: 1px solid #e1e1e1; transition: 0.3s;
   }
-
   .member-card:hover { transform: translateY(-10px); }
   .member-img { width: 100%; height: 220px; object-fit: cover; }
 </style>
@@ -61,7 +39,7 @@ header:
   {% for miembro in pregrado %}
   <div class="member-card">
     <img src="{{ miembro.foto | relative_url }}" class="member-img">
-    <div class="member-info" style="padding:15px;">
+    <div style="padding:15px;">
       <div style="font-weight:bold;">{{ miembro.nombre }}</div>
       <div style="color:#d35400; font-weight:bold;">{{ miembro.area }}</div>
       <div style="font-size:0.85em;">{{ miembro.carrera }}</div>
@@ -77,7 +55,7 @@ header:
   {% for miembro in egresados %}
   <div class="member-card">
     <img src="{{ miembro.foto | relative_url }}" class="member-img">
-    <div class="member-info" style="padding:15px;">
+    <div style="padding:15px;">
       <div style="font-weight:bold;">{{ miembro.nombre }}</div>
       <div style="color:#7f8c8d; font-weight:bold;">{{ miembro.area }}</div>
       <div style="font-size:0.85em;">{{ miembro.carrera }}</div>
