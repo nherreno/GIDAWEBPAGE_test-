@@ -48,7 +48,21 @@ header:
   </div>
   {% endfor %}
 </div>
-
+<h2 class="seccion-titulo">Estudiantes de Posgrado</h2>
+<div class="team-grid">
+  {% assign posgrado = site.data.miembros | where: "tipo", "posgrado" %}
+  {% for miembro in posgrado %}
+  <div class="member-card">
+    <img src="{{ miembro.foto | relative_url }}" class="member-img">
+    <div style="padding:15px;">
+      <div style="font-weight:bold;">{{ miembro.nombre }}</div>
+      <div style="color:#2980b9; font-weight:bold;">{{ miembro.area }}</div>
+      <div style="font-size:0.85em;">{{ miembro.carrera }}</div>
+      <a href="mailto:{{ miembro.correo }}" style="font-size:0.8em; color:#2980b9;">{{ miembro.correo }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 <h2 class="seccion-titulo">Egresados</h2>
 <div class="team-grid">
   {% assign egresados = site.data.miembros | where: "tipo", "egresado" %}
