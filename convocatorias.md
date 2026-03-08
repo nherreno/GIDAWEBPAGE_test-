@@ -56,9 +56,11 @@ header:
 <div class="convocatorias-wrapper">
   {% if site.data.convocatorias %}
     {% for conv in site.data.convocatorias %}
-      <div class="card-gida {% if conv.estado contains 'Abierta' %}card-abierta{% endif %}">
+      {% assign estado_min = conv.estado | downcase %}
+
+      <div class="card-gida {% if estado_min contains 'abierta' %}card-abierta{% endif %}">
         
-        <div class="status-badge {% if conv.estado contains 'Abierta' %}badge-abierta{% else %}badge-cerrada{% endif %}">
+        <div class="status-badge {% if estado_min contains 'abierta' %}badge-abierta{% else %}badge-cerrada{% endif %}">
           {{ conv.estado }}
         </div>
 
@@ -72,7 +74,7 @@ header:
           {{ conv.descripcion }}
         </div>
 
-        {% if conv.estado contains 'Abierta' %}
+        {% if estado_min contains 'abierta' %}
           {% if conv.link_inscripcion and conv.link_inscripcion != "" and conv.link_inscripcion != "#" %}
             <a href="{{ conv.link_inscripcion }}" class="btn-gida" target="_blank">Postularme ahora</a>
           {% else %}
