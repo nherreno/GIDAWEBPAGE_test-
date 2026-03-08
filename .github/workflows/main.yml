@@ -3,29 +3,31 @@ name: Convertir Excel a YAML Automáticamente
 on:
   push:
     paths:
-      - '_data/*.csv' # Solo se ejecuta si cambias un CSV
+      - '_data/*.csv' # Solo corre si subes un CSV
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permiso explícito para que el robot pueda guardar el .yml
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Configurar Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.9'
         
-    - name: Instalar Dependencias
-      run: pip install pyyaml # ESTO ES VITAL
+    - name: Instalar PyYAML
+      run: pip install pyyaml
         
-    - name: Ejecutar Conversion
+    - name: Ejecutar Script de Conversion
       run: python convertir_datos.py
       
-    - name: Subir Cambios
+    - name: Commit y Push del YAML generado
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add _data/*.yml
-        git commit -m "Auto-update YAML desde CSV" || exit 0
+        git commit -m "🤖 Auto-update: CSV a YAML" || exit 0
         git push
