@@ -24,7 +24,7 @@
   correo: "ing@unal.edu.co"
   foto: "/assets/images/miembros/default.jpg"
 
-  -nombre: "Juan Astronauta 2 "
+- nombre: "Juan Astronauta 2 "
   tipo: "posgrado"     # <--- Identificador clave
   area: "Propulsión"
   carrera: "Ing. Mecánica"
