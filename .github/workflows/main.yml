@@ -1,0 +1,23 @@
+name: Convertir Excel a YAML Automáticamente
+on: [push] # Se activa cada vez que subes cambios
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Instalar dependencias
+      run: pip install pyyaml
+    - name: Ejecutar conversión
+      run: python convertir_datos.py
+    - name: Guardar cambios en el repo
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add _data/*.yml
+        git commit -m "Auto-update YAML desde CSV" || exit 0
+        git push
