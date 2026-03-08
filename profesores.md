@@ -75,37 +75,38 @@ header:
   }
 </style>
 
+{% assign docentes = site.data.profesores %}
+
+{% for profe in docentes %}
 <div class="profesor-container">
-  {% assign docentes = site.data.miembros | where: "tipo", "profesor" %}
-  {% for profe in docentes %}
   <div class="profesor-left">
     <img src="{{ profe.foto | relative_url }}" class="profesor-img" alt="{{ profe.nombre }}">
     <h2 style="margin: 15px 0 5px;">{{ profe.nombre }}</h2>
     <div class="tag-area">PROFESOR ASOCIADO</div>
     <p style="font-size: 0.9em; color: #666;">{{ profe.correo }}</p>
-    <a href="https://cvlac.minciencias.gov.co" class="btn btn--primary" target="_blank">Ver CvLAC</a>
+    <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000141653" class="btn btn--primary" target="_blank">Ver CvLAC</a>
   </div>
 
   <div class="profesor-right">
     <h3 style="color: #950001; margin-top: 0;">Perfil Académico</h3>
-    <p style="line-height: 1.6; font-size: 0.95em; text-align: justify;">
-      {{ profe.descripcion }} </p>
-
-    <h4 style="margin-bottom: 10px;">Formación Destacada</h4>
+    <p style="text-align: justify; line-height: 1.6;">
+      {{ profe.descripcion }}
+    </p>
+    
+    <h4>Formación Académica</h4>
     <ul class="lineas-investigacion">
-      <li><strong>Doctor of Philosophy (Ph.D.):</strong> University of Leicester, UK</li>
-      <li><strong>MSc in Control Systems:</strong> University of Sheffield, UK</li>
-      <li><strong>Ingeniería Mecánica:</strong> Universidad Nacional de Colombia</li>
+      <li><strong>Doctor of Philosophy (Ph.D.):</strong> University of Leicester, Reino Unido.</li>
+      <li><strong>Master of Science (M.Sc.) in Control Systems:</strong> University of Sheffield, Reino Unido.</li>
+      <li><strong>Ingeniero Mecánico:</strong> Universidad Nacional de Colombia.</li>
     </ul>
 
-    <h4 style="margin-top: 20px; margin-bottom: 10px;">Líneas de Investigación</h4>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <span style="background: #eee; padding: 5px 10px; border-radius: 5px; font-size: 0.85em;">Control Robusto</span>
-      <span style="background: #eee; padding: 5px 10px; border-radius: 5px; font-size: 0.85em;">Sistemas No Lineales</span>
-      <span style="background: #eee; padding: 5px 10px; border-radius: 5px; font-size: 0.85em;">Robótica Móvil</span>
-    </div>
+    <h4 style="margin-top: 20px;">Áreas de Especialidad</h4>
+    <p style="font-size: 0.9em; color: #444;">
+      Control Robusto, Sistemas No Lineales, Control de Sistemas Multivariables y Optimización Global.
+    </p>
   </div>
-  {% endfor %}
+</div>
+{% endfor %}
 </div>
 
 <script>
