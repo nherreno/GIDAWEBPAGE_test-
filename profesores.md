@@ -3,7 +3,7 @@
 # BLOQUE 1: CONFIGURACIÓN DE PÁGINA
 # ==========================================
 layout: single
-title: "Cuerpo Docente
+title: "Cuerpo Docente"
 permalink: /profesores/
 author_profile: true
 header:
