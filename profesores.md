@@ -1,114 +1,51 @@
 ---
-# ==========================================
-# BLOQUE 1: CONFIGURACIÓN DE PÁGINA
-# ==========================================
 layout: single
-title: "Dirección Académica"
+title: "Cuerpo Docente"
 permalink: /profesores/
-author_profile: true
 header:
   overlay_color: "#05070a"
 ---
 
-<div id="mi-header-espacial" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
-  <canvas id="canvas-estrellas"></canvas>
-</div>
-
 <style>
-  /* BLOQUE 3: ESTILOS DE PERFIL PROFESIONAL (CSS) */
-  /* ZONA DE CAMBIO: Colores institucionales y sombras */
-  .page__hero--overlay { position: relative !important; background-color: #05070a !important; overflow: hidden; }
-
-  .profesor-container {
-    max-width: 900px;
+  .profesor-card {
+    max-width: 950px;
     margin: 40px auto;
     background: #fff;
     border-radius: 15px;
-    display: flex; /* Diseño horizontal para más info */
+    display: flex;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    border-left: 8px solid #950001; /* Franja Roja UNAL */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-left: 10px solid #950001;
   }
-
-  .profesor-left {
-    background: #f8f9fa;
-    padding: 40px;
-    text-align: center;
-    flex: 1;
-  }
-
-  .profesor-right {
-    padding: 40px;
-    flex: 2;
-  }
-
-  .profesor-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-
-  .tag-area {
-    display: inline-block;
-    background: #950001;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .lineas-investigacion {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-  }
-
-  .lineas-investigacion li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 0.9em;
-  }
+  .profesor-sidebar { background: #fdfdfd; padding: 40px; text-align: center; flex: 1; border-right: 1px solid #eee; }
+  .profesor-main { padding: 40px; flex: 2; }
+  .profesor-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  .tag-is { background: #950001; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75em; font-weight: bold; }
 </style>
 
-{% assign docentes = site.data.profesores %}
-
-{% for profe in docentes %}
-<div class="profesor-container">
-  <div class="profesor-left">
-    <img src="{{ profe.foto | relative_url }}" class="profesor-img" alt="{{ profe.nombre }}">
+{% for profe in site.data.profesores %}
+<div class="profesor-card">
+  <div class="profesor-sidebar">
+    <img src="{{ profe.foto | relative_url }}" class="profesor-photo">
     <h2 style="margin: 15px 0 5px;">{{ profe.nombre }}</h2>
-    <div class="tag-area">PROFESOR ASOCIADO</div>
-    <p style="font-size: 0.9em; color: #666;">{{ profe.correo }}</p>
-    <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000141653" class="btn btn--primary" target="_blank">Ver CvLAC</a>
+    <span class="tag-is">{{ profe.cargo }}</span>
+    <p style="margin-top: 15px; font-size: 0.9em; color: #333;">{{ profe.correo }}</p>
   </div>
 
-  <div class="profesor-right">
-    <h3 style="color: #950001; margin-top: 0;">Perfil Académico</h3>
-    <p style="text-align: justify; line-height: 1.6;">
-      {{ profe.descripcion }}
-    </p>
+  <div class="profesor-main">
+    <h3 style="color: #950001; margin-top: 0;">Perfil Profesional</h3>
+    <p style="text-align: justify; line-height: 1.6;">{{ profe.perfil }}</p>
     
-    <h4>Formación Académica</h4>
-    <ul class="lineas-investigacion">
-      <li><strong>Doctor of Philosophy (Ph.D.):</strong> University of Leicester, Reino Unido.</li>
-      <li><strong>Master of Science (M.Sc.) in Control Systems:</strong> University of Sheffield, Reino Unido.</li>
-      <li><strong>Ingeniero Mecánico:</strong> Universidad Nacional de Colombia.</li>
+    <h4 style="border-bottom: 1px solid #eee; padding-bottom: 5px;">Formación Académica</h4>
+    <ul style="list-style: none; padding: 0; font-size: 0.9em;">
+      {% for estudio in profe.estudios %}
+      <li style="margin-bottom: 15px;">
+        <i class="fas fa-graduation-cap"></i> <strong>{{ estudio.grado }}</strong><br>
+        <span style="color: #666;">{{ estudio.institucion }}</span><br>
+        <small style="font-style: italic;">Tesis: {{ estudio.tesis }}</small>
+      </li>
+      {% endfor %}
     </ul>
-
-    <h4 style="margin-top: 20px;">Áreas de Especialidad</h4>
-    <p style="font-size: 0.9em; color: #444;">
-      Control Robusto, Sistemas No Lineales, Control de Sistemas Multivariables y Optimización Global.
-    </p>
   </div>
 </div>
 {% endfor %}
-</div>
-
-<script>
-  /* [Mismo script de animación de estrellas que ya tienes] */
-</script>
