@@ -54,17 +54,30 @@ header:
   }
 </style>
 
-<div id="mi-header-espacial" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
-  <canvas id="canvas-estrellas"></canvas>
-</div>
-
 <style>
-  /* BLOQUE 3: ESTILOS VISUALES */
-  .page__hero--overlay { position: relative !important; background-color: #05070a !important; overflow: hidden; }
-  
+  /* BLOQUE DE ESTILOS ACTUALIZADO */
   .convocatorias-wrapper { margin-top: 30px; position: relative; z-index: 1; }
 
-  /* Estilos de los recuadros de estado (Badges) */
+  /* Colores Dinámicos para Badges y Bordes */
+  .color-rojo { border-left-color: #950001 !important; }
+  .bg-rojo { background-color: #950001; color: white; }
+
+  .color-verde { border-left-color: #27ae60 !important; }
+  .bg-verde { background-color: #27ae60; color: white; }
+
+  .color-amarillo { border-left-color: #f1c40f !important; }
+  .bg-amarillo { background-color: #f1c40f; color: #333; }
+
+  .card-gida {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-left: 10px solid #950001; /* Color por defecto */
+    transition: 0.3s;
+  }
+
   .status-badge {
     display: inline-block;
     padding: 5px 15px;
@@ -74,24 +87,9 @@ header:
     text-transform: uppercase;
     margin-bottom: 15px;
   }
-  .badge-verde { background-color: #27ae60; color: white; } /* Abierta con Link */
-  .badge-amarillo { background-color: #f1c40f; color: #333; } /* Abierta sin Link */
-  .badge-rojo { background-color: #950001; color: white; } /* Cerrada */
-
-  .card-gida {
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 35px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-left: 10px solid #950001;
-    transition: 0.3s;
-  }
-
-  .card-gida:hover { transform: translateY(-5px); }
 
   .btn-gida {
-    background: #950001;
+    background: #950001; /* Rojo Institucional */
     color: white !important;
     padding: 12px 25px;
     border-radius: 8px;
@@ -113,17 +111,21 @@ header:
         {% assign tiene_link = true %}
       {% endif %}
 
-      <div class="card-gida">
-        
-        {% if estado_min contains 'abierta' %}
-          {% if tiene_link %}
-            <div class="status-badge badge-verde">{{ conv.estado }}</div>
-          {% else %}
-            <div class="status-badge badge-amarillo">{{ conv.estado }}</div>
-          {% endif %}
+      {% if estado_min contains 'abierta' %}
+        {% if tiene_link %}
+          {% assign color_clase = "verde" %}
         {% else %}
-          <div class="status-badge badge-rojo">{{ conv.estado }}</div>
+          {% assign color_clase = "amarillo" %}
         {% endif %}
+      {% else %}
+        {% assign color_clase = "rojo" %}
+      {% endif %}
+
+      <div class="card-gida color-{{ color_clase }}">
+        
+        <div class="status-badge bg-{{ color_clase }}">
+          {{ conv.estado }}
+        </div>
 
         <h2 style="margin: 0 0 10px 0; border: none; color: #333;">{{ conv.titulo }}</h2>
         <p style="color: #950001; font-weight: bold;">📅 Cierre: {{ conv.fecha_cierre }}</p>
@@ -146,48 +148,6 @@ header:
     <p>No hay convocatorias vigentes en este momento.</p>
   {% endif %}
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const canvas = document.getElementById('canvas-estrellas');
-    const ctx = canvas.getContext('2d');
-    const header = document.querySelector('.page__hero--overlay') || document.querySelector('header');
-    const container = document.getElementById('mi-header-espacial');
-
-    if (header && container) {
-      header.appendChild(container);
-      
-      function resize() {
-        canvas.width = header.offsetWidth;
-        canvas.height = header.offsetHeight;
-      }
-
-      let stars = Array.from({length: 120}, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * 400,
-        r: Math.random() * 1.5,
-        v: Math.random() * 0.4
-      }));
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "white";
-        stars.forEach(s => {
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fill();
-          s.y += s.v;
-          if (s.y > canvas.height) s.y = 0;
-        });
-        requestAnimationFrame(animate);
-      }
-
-      window.addEventListener('resize', resize);
-      resize();
-      animate();
-    }
-  });
-</script>
 
 
 <script>
