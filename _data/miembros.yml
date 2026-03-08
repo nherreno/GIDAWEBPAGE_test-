@@ -1,0 +1,21 @@
+# ============================================================
+# GUÍA DE MANTENIMIENTO DE MIEMBROS - GIDA
+# ============================================================
+# Para agregar a alguien nuevo, copia y pega el bloque de abajo.
+# IMPORTANTE: 
+# 1. Respeta los dos espacios de sangría.
+# 2. Las fotos deben estar en /assets/images/miembros/
+# 3. Si un dato tiene comas, usa comillas "Ejemplo, Ingeniero".
+# ============================================================
+
+- nombre: "Nombre del Miembro"
+  area: "Área de Trabajo (Ej: Propulsión)"
+  carrera: "Carrera (Ej: Ingeniería Mecánica)"
+  correo: "usuario@unal.edu.co"
+  foto: "/assets/images/miembros/nombre-foto.jpg"
+
+- nombre: "Ejemplo Dos"
+  area: "Telecomunicaciones"
+  carrera: "Ingeniería Electrónica"
+  correo: "ejemplo2@unal.edu.co"
+  foto: "/assets/images/miembros/default.jpg"
