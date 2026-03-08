@@ -2,34 +2,35 @@ import csv
 import yaml
 import os
 
-def procesar_archivo(nombre):
-    csv_file = f'_data/{nombre}.csv'
-    yml_file = f'_data/{nombre}.yml'
+def limpiar_y_convertir(nombre_archivo):
+    ruta_csv = f'_data/{nombre_archivo}.csv'
+    ruta_yml = f'_data/{nombre_archivo}.yml'
     
-    if not os.path.exists(csv_file):
-        print(f"⚠️ No se encontro {csv_file}")
+    if not os.path.exists(ruta_csv):
         return
 
-    # Intentar leer el CSV con diferentes codificaciones (latinoamerica/excel)
-    encodings = ['utf-8', 'latin-1', 'cp1252', 'utf-8-sig']
-    for enc in encodings:
+    # Intentamos leer con la codificación de Excel (cp1252) que es la que suele traer tildes
+    # Si falla, intenta con utf-8. 'replace' ignora caracteres que no entiende en vez de dar error.
+    datos = []
+    for encoding_intento in ['cp1252', 'utf-8', 'latin-1']:
         try:
-            with open(csv_file, mode='r', encoding=enc) as f:
-                # Usamos el delimitador automático por si Excel usa punto y coma
-                dialect = csv.Sniffer().sniff(f.read(1024))
+            with open(ruta_csv, mode='r', encoding=encoding_intento, errors='replace') as f:
+                # Detectamos si usas comas o puntos y comas (Excel a veces cambia esto)
+                contenido = f.read(2048)
                 f.seek(0)
-                reader = csv.DictReader(f, dialect=dialect)
-                datos = [row for row in reader]
-                
-            # Guardar como YAML en formato limpio
-            with open(yml_file, 'w', encoding='utf-8') as f:
-                yaml.dump(datos, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
-            print(f"✅ Convertido: {nombre}.csv -> {nombre}.yml")
-            return
-        except Exception as e:
+                dialecto = csv.Sniffer().sniff(contenido)
+                lector = csv.DictReader(f, dialect=dialecto)
+                datos = [fila for fila in lector]
+                if datos: break 
+        except:
             continue
-    print(f"❌ Error fatal procesando {nombre}.csv")
+
+    if datos:
+        with open(ruta_yml, 'w', encoding='utf-8') as f:
+            yaml.dump(datos, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+        print(f"✅ Procesado con éxito: {nombre_archivo}")
 
 if __name__ == "__main__":
-    procesar_archivo('convocatorias')
-    procesar_archivo('miembros')
+    limpiar_y_convertir('convocatorias')
+    # Si tienes el de miembros, descomenta la siguiente línea:
+    # limpiar_y_convertir('miembros')
