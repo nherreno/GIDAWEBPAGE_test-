@@ -21,6 +21,7 @@
 remote_theme            : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin   : "contrast" # "contrast" es más profesional que "default"
 
+
 # Site Settings
 locale                  : "es-CO" # Cambiado a español de Colombia
 title                   : "GIDA UNAL"
@@ -29,6 +30,16 @@ description             : "Portal de Investigación Aeroespacial"
 url                     : "https://nherreno.github.io"
 baseurl                 : "/GIDAWEBPAGE_test-" # ¡VITAL para los estilos!
 repository              : "nherreno/GIDAWEBPAGE_test-"
+# esta parte toca que le digan a la IA que es cada cosas , quiza tenga que hacer algunos cambios para que se ejecute bien 
+
+# Site Settings GIDA
+#locale      : "es-CO" # Español de Colombia
+#title       : "GIDA UNAL"
+#name        : "GIDA"
+#description : "Portal de Investigación Aeroespacial"
+#url         : "https://gida-un.github.io"   # dominio de GitHub Pages
+#baseurl     : "/GidaWebPage"                # nombre exacto del repo
+repository  : "GIDA-UN/GidaWebPage"         # organización/usuario + repo
 #esta parte toca que le digan a la IA que es cada cosas , quiza tenga que hacer algunos cambios para que se ejecute bien 
 
 
