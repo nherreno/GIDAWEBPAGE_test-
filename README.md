@@ -1,5 +1,6 @@
 GidaWebPage
-Officiall Web page for GIDA UN vamos a usar una plantilla llamada jekyll de minimal mistakes , para las personas que mas adelante desarrollen codigo, posteriormente , quizas nos toque hacer nmodificaciones , voy a crear un repo de prueba en Github , actualizare el link, para que clonen la plantilla y adicional , pues trabajen sobre algo , ya mas sugerido para GIDA link https://github.com/nherreno/GIDAWEBPAGE_test- link visualizar: https://nherreno.github.io/GIDAWEBPAGE_test-/ si hay algun problema para editar o acceder a este repo , escribir a nherreno@unal.edu.co, posdata mas adelante generaremos el link de la pagina oficial 
+Officiall Web page for GIDA UN vamos a usar una plantilla llamada jekyll de minimal mistakes , para las personas que mas adelante desarrollen codigo, posteriormente , quizas nos toque hacer nmodificaciones , voy a crear un repo de prueba en Github , actualizare el link, para que clonen la plantilla y adicional , pues trabajen sobre algo , ya mas sugerido para GIDA link https://github.com/nherreno/GIDAWEBPAGE_test- link visualizar: https://nherreno.github.io/GIDAWEBPAGE_test-/ si hay algun problema para editar o acceder a este repo , escribir a nherreno@unal.edu.co, posdata mas adelante generaremos el link de la pagina oficial : es https://gida-un.github.io/GidaWebPage/
+
 
 1. Configuración del Motor (Gemfile)
 Lo primero que se realizó fue modificar el archivo Gemfile para asegurar la compatibilidad con los servidores de GitHub.
@@ -91,3 +92,4 @@ En _data/: Los archivos CSV deben mantener los encabezados originales (titulo, e
 Sección Recuerdos: Para añadir fotos, súbelas a assets/images/recuerdos/. El código en recuerdos.md se encarga de barajarlas aleatoriamente en cada carga de página.
 
 ⚠️ Nota Técnica Final: La arquitectura actual prioriza la autonomía de los coordinadores. El uso de Python como puente entre Excel y Jekyll asegura que la página sea escalable y fácil de mantener a largo plazo.
+
