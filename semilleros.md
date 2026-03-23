@@ -103,12 +103,13 @@ El semillero es el espacio donde la academia se encuentra con la pasión por el 
 
 ---
 
+---
 ## 📺 Listas de Reproducción
 Cursos y memorias audiovisuales de nuestras actividades académicas.
 
 <div class="yt-grid">
   <div class="yt-card">
-    <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/E8WInJ_wXzE/0.jpg');">
+    <div class="yt-thumb" style="background-image: url('{{ "/assets/images/imagen_play_list_1.jpg" | relative_url }}');">
        <div class="yt-overlay">CURSO</div>
     </div>
     <div class="yt-info">
@@ -118,7 +119,7 @@ Cursos y memorias audiovisuales de nuestras actividades académicas.
   </div>
 
   <div class="yt-card">
-    <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/v5u7p0z_oA0/0.jpg');">
+    <div class="yt-thumb" style="background-image: url('{{ "/assets/images/imagen_play_list_2.jpg" | relative_url }}');">
        <div class="yt-overlay">VIRTUAL</div>
     </div>
     <div class="yt-info">
@@ -128,7 +129,7 @@ Cursos y memorias audiovisuales de nuestras actividades académicas.
   </div>
 
   <div class="yt-card">
-    <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/p8kM7AueW48/0.jpg');">
+    <div class="yt-thumb" style="background-image: url('{{ "/assets/images/imagen_play_list_3.jpg" | relative_url }}');">
        <div class="yt-overlay">MEMORIAS</div>
     </div>
     <div class="yt-info">
