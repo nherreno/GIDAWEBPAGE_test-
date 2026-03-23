@@ -27,6 +27,7 @@ locale                  : "es-CO" # Cambiado a español de Colombia
 title                   : "GIDA UNAL"
 name                    : "GIDA"
 description             : "Portal de Investigación Aeroespacial"
+
 url                     : "https://nherreno.github.io"
 baseurl                 : "/GIDAWEBPAGE_test-" # ¡VITAL para los estilos!
 repository              : "nherreno/GIDAWEBPAGE_test-"

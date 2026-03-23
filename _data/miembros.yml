@@ -1,32 +1,107 @@
-# ============================================================
-# GUÍA DE MANTENIMIENTO DE MIEMBROS - GIDA
-# ============================================================
-# Para agregar a alguien nuevo, copia y pega el bloque de abajo.
-# IMPORTANTE: 
-# 1. Respeta los dos espacios de sangría.
-# 2. Las fotos deben estar en /assets/images/miembros/
-# 3. Si un dato tiene comas, usa comillas "Ejemplo, Ingeniero".
-# ============================================================
 # ==========================================
-# BLOQUE DE DATOS: Agrega aquí a los miembros
+# BLOQUE DE DATOS: Miembros GIDA
 # ==========================================
-- nombre: "Juan Astronauta"
-  tipo: "pregrado"     # <--- Identificador clave
-  area: "Propulsión"
-  carrera: "Ing. Mecánica"
-  correo: "juan@unal.edu.co"
-  foto: "/assets/images/miembros/default.jpg"
 
-- nombre: "Ingeniera Senior"
-  tipo: "egresado"     # <--- Identificador clave
-  area: "Estructuras"
-  carrera: "Ing. Aeroespacial"
-  correo: "ing@unal.edu.co"
-  foto: "/assets/images/miembros/default.jpg"
+- nombre: "Laura Daniella Buitrago Quintero"
+  tipo: "pregrado"
+  area: "Satélites"
+  carrera: "Ingeniería Mecatrónica"
+  correo: "lbuitragob@unal.edu.co"
+  foto: "/assets/images/miembros/IMG-20260308-WA0000 - Laura Daniella Buitrago Quintero.jpg"
+  descripcion: "Estudiante de Ingeniería Mecatrónica con enfoque en telecomunicaciones y sistemas satelitales. Ha participado en el desarrollo de sistemas de antenas, integrando conceptos de propagación electromagnética aplicados a entornos aeroespaciales."
 
-- nombre: "Juan Astronauta 2 "
-  tipo: "posgrado"     # <--- Identificador clave
-  area: "Propulsión"
-  carrera: "Ing. Mecánica"
-  correo: "juan@unal.edu.co"
-  foto: "/assets/images/miembros/default.jpg"
+- nombre: "Diego Fernando Fernández Narváez"
+  tipo: "pregrado"
+  area: "Cohetería, Ambientes análogos"
+  carrera: "Ingeniería Electrónica"
+  correo: "dfernandezn@unal.edu.co"
+  foto: "/assets/images/miembros/DFFN - Diego Fernando Fernandez Narvaez.png"
+  descripcion: "Estudiante enfocado en sistemas de microondas, propagación de ondas electromagnéticas y sistemas embebidos. Trabaja en control y desarrollo de tecnologías aplicadas a entornos aeroespaciales y simulaciones análogas."
+
+- nombre: "Gabriela Suarez Arismendy"
+  tipo: "pregrado"
+  area: "Cohetería"
+  carrera: "Ingeniería Mecánica"
+  correo: "gsuareza@unal.edu.co"
+  foto: "/assets/images/miembros/WhatsApp Image 2026-03-03 at 3.27.05 PM - Gabriela Suarez Arismendy.jpeg"
+  descripcion: "Interesada en el desarrollo de sistemas de cohetería, con énfasis en análisis físico y matemático de fenómenos asociados, así como en procesos de diseño, fabricación y ensamblaje de componentes."
+
+- nombre: "Jesus Manuel Aragon Buitrago"
+  tipo: "pregrado"
+  area: "Cohetería, Rover"
+  carrera: "Ingeniería Mecatrónica"
+  correo: "jesusmanuelab@gmail.com"
+  foto: "/assets/images/miembros/IDPhoto_20260309_232536 - Jesus Manuel Aragon Buitrago.jpg"
+  descripcion: "Participa en proyectos de cohetería y sistemas rover, con enfoque en manufactura aditiva, logística operativa y coordinación de proyectos tecnológicos dentro del grupo."
+
+- nombre: "Paola Alejandra Bello Buitrago"
+  tipo: "pregrado"
+  area: "Ambientes análogos"
+  carrera: "Ingeniería Electrónica"
+  correo: "pbellob@unal.edu.co"
+  foto: "/assets/images/miembros/Foto presentación - Paola Alejandra Bello Buitrago.jpg"
+  descripcion: "Enfocada en el desarrollo de soluciones para ambientes análogos, con interés en sostenibilidad, aprovechamiento de recursos naturales y su aplicación tanto en contextos espaciales como terrestres."
+
+- nombre: "Jesus Andres Acosta Varela"
+  tipo: "pregrado"
+  area: "Cohetería, Divulgación y redes"
+  carrera: "Ingeniería Mecánica"
+  correo: "jeacostav@unal.edu.co"
+  foto: "/assets/images/miembros/IMG_5848 - Jesus Andres Acosta Varela.jpeg"
+  descripcion: "Interesado en propulsión, aerodinámica y materiales aeroespaciales. Participa en actividades de divulgación y comunicación científica del grupo."
+
+- nombre: "Carlos Fernando Quintero Castillo"
+  tipo: "pregrado"
+  area: "Cohetería, Divulgación y redes"
+  carrera: "Ingeniería Mecatrónica"
+  correo: "cquinteroca@unal.edu.co"
+  foto: "/assets/images/miembros/20250101_000542 - Carlos Fernando Quintero Castillo.png"
+  descripcion: "Trabaja en calibración y programación de sensores aplicados a sistemas de cohetería, contribuyendo al desarrollo de instrumentación y adquisición de datos."
+
+- nombre: "Diego Andres Mendoza"
+  tipo: "egresado"
+  area: "Satélites, Ambientes análogos"
+  carrera: "Ingeniería Mecatrónica"
+  correo: "damendozam@gmail.com"
+  foto: "/assets/images/miembros/IMG_2331 - Diego Andres Mendoza.JPG"
+  descripcion: "Egresado con experiencia en desarrollo de sistemas de ingeniería aplicados a telemetría y tecnologías aeroespaciales."
+
+- nombre: "Jhon Fredy Tiuso Calderon"
+  tipo: "pregrado"
+  area: "Cohetería"
+  carrera: "Física"
+  correo: "jtiuso@unal.edu.co"
+  foto: "/assets/images/miembros/WhatsApp Image 2026-03-15 at 7.53.58 PM - Jhon Fredy Tiuso Calderon.jpeg"
+  descripcion: "Interesado en el estudio del espacio y fenómenos físicos asociados, participando en proyectos de cohetería desde un enfoque teórico y experimental."
+
+- nombre: "Pablo Muñoz"
+  tipo: "pregrado"
+  area: "Ambientes análogos"
+  carrera: "Medicina"
+  correo: "pmunozj@unal.edu.co"
+  foto: "/assets/images/miembros/IMG-20260204-WA0002 - Pablo Munoz Jaramillo.jpg"
+  descripcion: "Participa en el desarrollo de simuladores de traje y análisis de condiciones humanas en ambientes análogos, integrando conocimientos médicos en contextos aeroespaciales."
+
+- nombre: "Juan Sebastian Paredes De La Cruz"
+  tipo: "egresado"
+  area: "Cohetería"
+  carrera: "Ingeniería Mecánica"
+  correo: "jpardesd@unal.edu.co"
+  foto: "/assets/images/miembros/personal 3x4 - Juan Sebastian Paredes De La Cruz.jpg"
+  descripcion: "Egresado con experiencia en sistemas de telemetría y combustión, enfocado en el desarrollo de tecnologías de cohetería."
+
+- nombre: "Cristian Danilo Romero Orjuela"
+  tipo: "egresado"
+  area: "Ambientes análogos"
+  carrera: "Ingeniería Agronómica"
+  correo: "cromeroo@unal.edu.co"
+  foto: "/assets/images/miembros/IMG-20260315-WA0066 - Cristian Danilo Romero Orjuela.jpg"
+  descripcion: "Egresado con enfoque en cultivos en ambientes análogos, contribuyendo al desarrollo de sistemas sostenibles para exploración espacial."
+
+- nombre: "Laura Daniela Jimenez Prada"
+  tipo: "pregrado"
+  area: "Satélites"
+  carrera: "Geología"
+  correo: "ljimenezpr@unal.edu.co"
+  foto: "/assets/images/miembros/yo - Laura Daniela Jimenez Prada.jpeg"
+  descripcion: "Participa en el área de satélites aportando una perspectiva geológica al análisis de datos espaciales. Interesada en la integración entre ciencias de la Tierra y tecnologías aeroespaciales."
