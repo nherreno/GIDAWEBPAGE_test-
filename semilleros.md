@@ -41,8 +41,8 @@ header:
   /* GRID DE YOUTUBE */
   .yt-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     margin-top: 20px;
   }
   .yt-card {
@@ -52,10 +52,12 @@ header:
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s;
     border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
   }
   .yt-card:hover { transform: translateY(-5px); border-color: #ff0000; }
   .yt-thumb {
-    width: 100%; height: 150px;
+    width: 100%; height: 160px;
     background-size: cover;
     background-position: center;
     display: flex; align-items: center; justify-content: center;
@@ -65,8 +67,9 @@ header:
     color: white; padding: 4px 10px;
     border-radius: 4px; font-size: 0.75em; font-weight: bold;
   }
-  .yt-info { padding: 15px; }
-  .yt-title { font-weight: bold; color: #333; text-decoration: none; font-size: 0.95em; }
+  .yt-info { padding: 15px; flex-grow: 1; }
+  .yt-title { font-weight: bold; color: #333; text-decoration: none; font-size: 1em; display: block; margin-bottom: 5px; }
+  .yt-desc { font-size: 0.85em; color: #666; line-height: 1.4; }
   
   .btn-yt {
     background: #ff0000; color: white !important;
@@ -76,7 +79,7 @@ header:
   }
 </style>
 
-El semillero es la puerta de entrada al GIDA. Aquí formamos a los próximos ingenieros y científicos mediante sesiones teórico-prácticas.
+El semillero es el espacio donde la academia se encuentra con la pasión por el espacio. Aquí compartimos el conocimiento técnico necesario para impulsar la cohetería experimental en Colombia.
 
 ## 📅 Próximas Sesiones Presenciales
 *Las fechas se actualizan semestralmente según el calendario académico.*
@@ -90,64 +93,68 @@ El semillero es la puerta de entrada al GIDA. Aquí formamos a los próximos ing
     </tr>
   </thead>
   <tbody>
-    <tr><td>TBD</td><td>Introducción y Bienvenida</td><td>Líderes GIDA</td></tr>
-    <tr><td>TBD</td><td>Principios de Propulsión</td><td>Área de Motores</td></tr>
-    <tr><td>TBD</td><td>Diseño y Simulación</td><td>Área de Estructuras</td></tr>
-    <tr><td>TBD</td><td>Electrónica y Telemetría</td><td>Área de Control</td></tr>
-    <tr><td>TBD</td><td>Lanzamiento Experimental</td><td>Equipo de Logística</td></tr>
+    <tr><td>Por definir</td><td>Introducción y Bienvenida</td><td>Líderes GIDA</td></tr>
+    <tr><td>Por definir</td><td>Principios de Propulsión</td><td>Área de Motores</td></tr>
+    <tr><td>Por definir</td><td>Diseño y Simulación</td><td>Área de Estructuras</td></tr>
+    <tr><td>Por definir</td><td>Electrónica y Telemetría</td><td>Área de Control</td></tr>
+    <tr><td>Por definir</td><td>Lanzamiento Experimental</td><td>Equipo de Logística</td></tr>
   </tbody>
 </table>
 
 ---
 
-## 📺 Playlists Principales
-Explora el contenido estructurado de nuestros semilleros anteriores.
+## 📺 Listas de Reproducción
+Cursos y memorias audiovisuales de nuestras actividades académicas.
 
 <div class="yt-grid">
   <div class="yt-card">
     <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/E8WInJ_wXzE/0.jpg');">
-       <div class="yt-overlay">PLAYLIST OFICIAL</div>
+       <div class="yt-overlay">CURSO</div>
     </div>
     <div class="yt-info">
-      <a href="https://www.youtube.com/playlist?list=PLW-x_Z6ObeI0u0m_E7vAia5mREOAtRk5p" class="yt-title" target="_blank">Semillero Ciencias Aeroespaciales</a>
+      <a href="https://youtube.com/playlist?list=PL0mmfoegIHGHQWsowK9Hx19bnTQfqui2_" class="yt-title" target="_blank">Semillero en Ciencias Aeroespaciales</a>
+      <p class="yt-desc">Bases fundamentales para el estudio y desarrollo de proyectos aeroespaciales.</p>
     </div>
   </div>
 
   <div class="yt-card">
     <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/v5u7p0z_oA0/0.jpg');">
-       <div class="yt-overlay">CURSO COMPLETO</div>
+       <div class="yt-overlay">VIRTUAL</div>
     </div>
     <div class="yt-info">
-      <a href="https://www.youtube.com/playlist?list=PLW-x_Z6ObeI3PqZzX6I_7zUv75E9Z8S7k" class="yt-title" target="_blank">Semillero Ciencia y Tecnología</a>
+      <a href="https://youtube.com/playlist?list=PL0mmfoegIHGHAAnS6AEuBmgbk2mMV4gIF" class="yt-title" target="_blank">Introducción a la Ciencia y Tecnología</a>
+      <p class="yt-desc">Curso virtual detallado sobre los pilares de la ingeniería espacial.</p>
     </div>
   </div>
 
   <div class="yt-card">
     <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/p8kM7AueW48/0.jpg');">
-       <div class="yt-overlay">TALLER PRÁCTICO</div>
+       <div class="yt-overlay">MEMORIAS</div>
     </div>
     <div class="yt-info">
-      <a href="https://www.youtube.com/playlist?list=PLW-x_Z6ObeI0Vp7X7u_eS_L-v0YV_mPZ4" class="yt-title" target="_blank">Cohetería de Agua (Kits GIDA)</a>
+      <a href="https://www.youtube.com/playlist?list=PLW-x_Z6ObeI0Vp7X7u_eS_L-v0YV_mPZ4" class="yt-title" target="_blank">GIDA Feria y Exhibiciones</a>
+      <p class="yt-desc">Registros de ferias, entrevistas y lanzamientos de cohetes de agua grabados.</p>
     </div>
   </div>
 </div>
 
-## 🎥 Contenido Adicional
-Videos de lanzamientos, eventos y tutoriales rápidos.
+## 🎥 Contenido Adicional Destacado
+Entrevistas y material especial con expertos internacionales.
 
 <div class="yt-grid">
   <div class="yt-card">
-    <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/Yf84U0A7x60/0.jpg');">
-       <div class="yt-overlay">EXTRAS</div>
+    <div class="yt-thumb" style="background-image: url('https://img.youtube.com/vi/0lkiC00OgKE/0.jpg');">
+       <div class="yt-overlay">DESTACADO</div>
     </div>
     <div class="yt-info">
-      <a href="https://www.youtube.com/@CohetesdeaguaGIDAUN/videos" class="yt-title" target="_blank">Videos y Lanzamientos Recientes</a>
+      <a href="https://youtu.be/0lkiC00OgKE" class="yt-title" target="_blank">Entrevista Jacky Silva-Martínez</a>
+      <p class="yt-desc">Conversación desde el Johnson Space Center de la NASA sobre su trayectoria y el futuro espacial.</p>
     </div>
   </div>
 </div>
 
 <center>
-  <a href="https://www.youtube.com/@CohetesdeaguaGIDAUN" class="btn-yt" target="_blank">
+  <a href="https://youtube.com/@gidaun" class="btn-yt" target="_blank">
     <i class="fab fa-youtube"></i> SUSCRÍBETE AL CANAL
   </a>
 </center>
