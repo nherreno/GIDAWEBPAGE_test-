@@ -15,18 +15,17 @@ header:
   .page__hero--overlay { position: relative !important; background-color: #05070a !important; overflow: hidden; }
   .seccion-titulo { border-bottom: 2px solid #950001; margin: 50px 0 30px; color: #2c3e50; font-size: 1.8em; font-weight: bold; }
   
-  /* CONTENEDOR DE LA REJILLA */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
-    gap: 30px;
-    perspective: 1000px; /* Necesario para el efecto 3D */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 35px; /* Aumentamos el espacio entre tarjetas para que respiren mejor */
+    perspective: 1200px; 
   }
 
-  /* ESTRUCTURA DE LA TARJETA FLIP */
+  /* --- AJUSTE VERTICAL AQUÍ --- */
   .member-card-container {
     width: 100%;
-    height: 380px; /* Altura fija para consistencia */
+    height: 480px; /* Lo subimos a 480px para que se vean más alargadas y elegantes */
     cursor: pointer;
   }
 
@@ -35,13 +34,12 @@ header:
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Giro más fluido */
     transform-style: preserve-3d;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
   }
 
-  /* Clase que activa el giro al hacer click (manejada por JS) */
   .member-card-container.is-flipped .member-card-inner {
     transform: rotateY(180deg);
   }
@@ -52,37 +50,49 @@ header:
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 12px;
+    border-radius: 15px;
     background: #ffffff;
-    border: 1px solid #e1e1e1;
+    border: 1px solid #eee;
     overflow: hidden;
     display: flex;
     flex-direction: column;
   }
 
-  /* PARTE FRONTAL */
-  .member-img { width: 100%; height: 220px; object-fit: cover; }
-  .info-front { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+  /* Ajuste de la imagen para que ocupe más espacio visual */
+  .member-img { 
+    width: 100%; 
+    height: 280px; /* Agrandamos la foto proporcionalmente */
+    object-fit: cover; 
+  }
 
-  /* PARTE TRASERA */
+  .info-front { 
+    padding: 20px; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    background: linear-gradient(to bottom, #ffffff, #fcfcfc);
+  }
+
   .card-back {
     transform: rotateY(180deg);
-    background: #f9f9f9;
-    padding: 20px;
+    background: #fdfdfd;
+    padding: 25px;
     color: #333;
     text-align: left;
+    border-left: 6px solid #950001; /* Detalle estético en la parte de atrás */
   }
 
   .scroll-content {
-    overflow-y: auto; /* Habilita el scroll si el texto es largo */
+    overflow-y: auto;
     height: 100%;
-    font-size: 0.9em;
-    line-height: 1.5;
-    padding-right: 5px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    padding-right: 8px;
   }
 
-  /* Personalización del scrollbar */
-  .scroll-content::-webkit-scrollbar { width: 4px; }
+  /* Scrollbar personalizado rojo GIDA */
+  .scroll-content::-webkit-scrollbar { width: 5px; }
   .scroll-content::-webkit-scrollbar-thumb { background: #950001; border-radius: 10px; }
 </style>
 
