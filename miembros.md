@@ -12,20 +12,35 @@ header:
 </div>
 
 <style>
-  .page__hero--overlay { position: relative !important; background-color: #05070a !important; overflow: hidden; }
-  .seccion-titulo { border-bottom: 2px solid #950001; margin: 50px 0 30px; color: #2c3e50; font-size: 1.8em; font-weight: bold; }
+  /* 1. CONFIGURACIÓN DEL HEADER (Estrellas) */
+  .page__hero--overlay { 
+    position: relative !important; 
+    background-color: #05070a !important; 
+    overflow: hidden; 
+  }
+
+  .seccion-titulo { 
+    border-bottom: 3px solid #950001; 
+    margin: 60px 0 40px; 
+    color: #1a252f; 
+    font-size: 2em; 
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
   
+  /* 2. GRID DE TRABAJO */
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    gap: 35px; /* Aumentamos el espacio entre tarjetas para que respiren mejor */
-    perspective: 1200px; 
+    gap: 40px; /* Espaciado amplio para tarjetas grandes */
+    perspective: 1500px; 
   }
 
-  /* --- AJUSTE VERTICAL AQUÍ --- */
+  /* 3. AJUSTE VERTICAL MAESTRO (520px) */
   .member-card-container {
     width: 100%;
-    height: 480px; /* Lo subimos a 480px para que se vean más alargadas y elegantes */
+    height: 520px; /* Altura máxima para un look estilizado */
     cursor: pointer;
   }
 
@@ -34,10 +49,10 @@ header:
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Giro más fluido */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto elástico al girar */
     transform-style: preserve-3d;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-radius: 20px;
   }
 
   .member-card-container.is-flipped .member-card-inner {
@@ -50,50 +65,69 @@ header:
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 15px;
+    border-radius: 20px;
     background: #ffffff;
-    border: 1px solid #eee;
+    border: 1px solid #f0f0f0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
   }
 
-  /* Ajuste de la imagen para que ocupe más espacio visual */
+  /* 4. FRONT: IMAGEN Y TEXTO */
   .member-img { 
     width: 100%; 
-    height: 280px; /* Agrandamos la foto proporcionalmente */
-    object-fit: cover; 
+    height: 320px; /* Foto más grande y dominante */
+    object-fit: cover;
+    border-bottom: 4px solid #950001;
   }
 
   .info-front { 
-    padding: 20px; 
+    padding: 25px; 
     flex-grow: 1; 
     display: flex; 
     flex-direction: column; 
-    justify-content: center; 
-    background: linear-gradient(to bottom, #ffffff, #fcfcfc);
+    justify-content: space-evenly; /* Distribuye el texto armoniosamente */
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
   }
 
+  .info-front div:first-child { 
+    font-size: 1.3em; 
+    color: #2c3e50;
+    line-height: 1.2;
+  }
+
+  /* 5. BACK: BIOGRAFÍA Y SCROLL */
   .card-back {
     transform: rotateY(180deg);
-    background: #fdfdfd;
-    padding: 25px;
-    color: #333;
+    background: #1a1a1a; /* Fondo oscuro elegante para la parte de atrás */
+    color: #eeeeee;
+    padding: 30px;
     text-align: left;
-    border-left: 6px solid #950001; /* Detalle estético en la parte de atrás */
+    border: 2px solid #950001;
   }
 
   .scroll-content {
     overflow-y: auto;
     height: 100%;
-    font-size: 0.95em;
-    line-height: 1.6;
-    padding-right: 8px;
+    font-size: 1em;
+    line-height: 1.7;
+    padding-right: 10px;
   }
 
-  /* Scrollbar personalizado rojo GIDA */
-  .scroll-content::-webkit-scrollbar { width: 5px; }
+  /* Scrollbar estético */
+  .scroll-content::-webkit-scrollbar { width: 6px; }
+  .scroll-content::-webkit-scrollbar-track { background: #333; }
   .scroll-content::-webkit-scrollbar-thumb { background: #950001; border-radius: 10px; }
+
+  .back-title {
+    color: #950001;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: block;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+  }
 </style>
 
 <h2 class="seccion-titulo">Estudiantes de Pregrado</h2>
